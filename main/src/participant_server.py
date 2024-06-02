@@ -16,8 +16,8 @@ SERVER_IP = os.getenv("COMPETITION_SERVER_IP", "host.docker.internal")
 SERVER_PORT = os.getenv("COMPETITION_SERVER_PORT", "8000")
 
 manager: FinalsManager = ModelsManager(LOCAL_IP)
-# manager: FinalsManager = AutoManager(LOCAL_IP)
-# manager: FinalsManager = MockManager()
+#manager: FinalsManager = AutoManager(LOCAL_IP)
+#manager: FinalsManager = MockManager()
 
 
 async def server():

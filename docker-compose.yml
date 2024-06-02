@@ -19,13 +19,13 @@ services:
       start_period: 3s
   til-main:
     build: main/
-    image: til_main:v0.0.1
+    image: ailmao-main:finals
     environment:
       - COMPETITION_SERVER_IP=${COMPETITION_SERVER_IP}
       - COMPETITION_SERVER_PORT=${COMPETITION_SERVER_PORT}
       - TEAM_NAME=${TEAM_NAME}
       - LOCAL_IP=${LOCAL_IP}
-    container_name: til-main
+    container_name: ailmao-main
     ulimits:
       memlock: -1 # set upper limit for how much memory is locked for the container (-1 means lock as much as the container uses)
     shm_size: 32gb # set upper limit for how much shared memory container can use
@@ -48,8 +48,8 @@ services:
     command: ["python", "participant_server.py"]
   til-asr:
     build: asr/
-    image: til_asr:v0.0.1
-    container_name: til-asr
+    image: ailmao-asr:finals
+    container_name: ailmao-asr
     environment:
       NVIDIA_VISIBLE_DEVICES: 0
       CUDA_VISIBLE_DEVICES: 0
@@ -74,8 +74,8 @@ services:
       start_period: 3s
   til-nlp:
     build: nlp/
-    image: til_nlp:v0.0.1
-    container_name: til-nlp
+    image: ailmao-nlp:finals
+    container_name: ailmao-nlp
     environment:
       NVIDIA_VISIBLE_DEVICES: 0
       CUDA_VISIBLE_DEVICES: 0
@@ -100,7 +100,7 @@ services:
       start_period: 3s
   til-autonomy:
     build: autonomy/
-    image: til_autonomy:v0.0.1
+    image: ailmao-autonomy:finals
     stdin_open: true
     tty: true
     environment:
@@ -110,7 +110,7 @@ services:
       - ROBOT_IP=${ROBOT_IP}
       - LOCAL_IP=${LOCAL_IP}
       - USE_ROBOT=${USE_ROBOT}
-    container_name: til-autonomy
+    container_name: ailmao-autonomy
     ports:
       - 5003:5003
       - 10100-10500:10100-10500/udp
@@ -130,8 +130,8 @@ services:
       start_period: 3s
   til-vlm:
     build: vlm/
-    image: til_vl:v0.0.1
-    container_name: til-vlm
+    image: ailmao-vlm:finals
+    container_name: ailmao-vlm
     environment:
       NVIDIA_VISIBLE_DEVICES: 0
       CUDA_VISIBLE_DEVICES: 0

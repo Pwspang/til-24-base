@@ -13,12 +13,21 @@ ENV PYTHONUNBUFFERED 1
 # set this flag to just ignore the warning
 ENV PIP_ROOT_USER_ACTION=ignore
 
+ENV CUDA_HOME=/usr/local/cuda \
+     TORCH_CUDA_ARCH_LIST="6.0 6.1 7.0 7.5 8.0 8.6+PTX"
+     
+
 RUN pip install -U pip
+RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 openjdk-17-jdk git -y
 WORKDIR /workspace
 
 # install other requirements
 COPY requirements.txt .
 RUN pip install -r requirements.txt
+
+RUN git clone https://github.com/IDEA-Research/GroundingDINO.git
+
+RUN cd GroundingDINO/ && python -m pip install .
 
 # copy the rest of the files into the container
 COPY src .
