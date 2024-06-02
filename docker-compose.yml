@@ -19,7 +19,7 @@ services:
       start_period: 3s
   til-main:
     build: main/
-    image: ailmao-main:finals
+    image: asia-southeast1-docker.pkg.dev/dsta-angelhack/repository-ailmao/ailmao-main:finals
     environment:
       - COMPETITION_SERVER_IP=${COMPETITION_SERVER_IP}
       - COMPETITION_SERVER_PORT=${COMPETITION_SERVER_PORT}
@@ -48,7 +48,7 @@ services:
     command: ["python", "participant_server.py"]
   til-asr:
     build: asr/
-    image: ailmao-asr:finals
+    image: asia-southeast1-docker.pkg.dev/dsta-angelhack/repository-ailmao/ailmao-asr:finals
     container_name: ailmao-asr
     environment:
       NVIDIA_VISIBLE_DEVICES: 0
@@ -74,7 +74,7 @@ services:
       start_period: 3s
   til-nlp:
     build: nlp/
-    image: ailmao-nlp:finals
+    image: asia-southeast1-docker.pkg.dev/dsta-angelhack/repository-ailmao/ailmao-nlp:finals
     container_name: ailmao-nlp
     environment:
       NVIDIA_VISIBLE_DEVICES: 0
@@ -100,7 +100,7 @@ services:
       start_period: 3s
   til-autonomy:
     build: autonomy/
-    image: ailmao-autonomy:finals
+    image: asia-southeast1-docker.pkg.dev/dsta-angelhack/repository-ailmao/ailmao-autonomy:finals
     stdin_open: true
     tty: true
     environment:
@@ -130,7 +130,7 @@ services:
       start_period: 3s
   til-vlm:
     build: vlm/
-    image: ailmao-vlm:finals
+    image: asia-southeast1-docker.pkg.dev/dsta-angelhack/repository-ailmao/ailmao-vlm:finals
     container_name: ailmao-vlm
     environment:
       NVIDIA_VISIBLE_DEVICES: 0
@@ -152,5 +152,5 @@ services:
       test: curl -f http://localhost:5004/health || exit 1
       interval: 5s
       timeout: 30s
-      retries: 5
+      retries: 10
       start_period: 3s
