@@ -11,3 +11,7 @@ Note that the above example is in `mp4` format as GitHub does not support embedd
 ## Output
 
 Transcription of audio file. Example: `"Heading is one five zero, target is green commercial aircraft, tool to deploy is electromagnetic pulse."`
+
+## Models Used 
+
+[Whisper](https://github.com/openai/whisper)

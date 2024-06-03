@@ -14,3 +14,10 @@ Note that images are provided as 1520x870 JPG files.
 List of 4 integers corresponding to the bounding box of target identified by the caption within the image in left-top-width-height (LTWH) format.
 
 Example: `[764, 420, 80, 60]`
+
+
+## Model Used 
+
+[GroundingDino](https://github.com/IDEA-Research/GroundingDINO) (Zero-Shot Object Detection)
+
+Trained using [Open-GroundingDino](https://github.com/longzw1997/Open-GroundingDino)

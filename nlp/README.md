@@ -23,3 +23,7 @@ Example JSON:
   "tool": "surface-to-air missiles"
 }
 ```
+
+## Model Used 
+
+[Roberta](https://huggingface.co/docs/transformers/en/model_doc/roberta) (Extractive QA)
