@@ -32,5 +32,7 @@ RUN cd GroundingDINO/ && python -m pip install .
 # copy the rest of the files into the container
 COPY src .
 
+RUN python cache.py
+
 # start model service
 CMD uvicorn api_service:app --port 5004 --host 0.0.0.0
