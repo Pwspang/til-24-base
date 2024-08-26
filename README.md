@@ -1,5 +1,11 @@
 # BrainHack TIL-24 Base
 
+## FineTuning Code
+
+- [ASR model](https://github.com/Pwspang/til-24-base/blob/main/asr/Model%20training.ipynb)
+- [NLP model](https://github.com/Pwspang/til-24-base/blob/main/nlp/NLPTraining.ipynb)
+- [VLM model](https://github.com/longzw1997/Open-GroundingDino)
+
 ## Important Links
 
 - [Guardian's Handbook](https://www.notion.so/tribegroup/BrainHack-2024-TIL-AI-Guardian-s-Handbook-c5d4ec3c3bd04b0db0329884c220791f)
